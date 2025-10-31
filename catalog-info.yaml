@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nodejs-huwpqdmy-gitops
+  description: This is GitOps manifest for nodejs-huwpqdmy   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=nodejs-huwpqdmy
+    backstage.io/kubernetes-id: nodejs-huwpqdmy 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: nodejs-huwpqdmy
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:nodejs-huwpqdmy
